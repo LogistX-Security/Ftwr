@@ -1,10 +1,11 @@
-package com.example.hackintosh.ftwr
+package com.example.hackintosh.ftwr.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.example.hackintosh.ftwr.R
 import com.example.hackintosh.ftwr.utils.Constants
 import com.example.hackintosh.ftwr.utils.SharedPrefUtil
 

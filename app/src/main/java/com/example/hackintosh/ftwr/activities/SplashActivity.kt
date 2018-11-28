@@ -1,4 +1,4 @@
-package com.example.hackintosh.ftwr
+package com.example.hackintosh.ftwr.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity

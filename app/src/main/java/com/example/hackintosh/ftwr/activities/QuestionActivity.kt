@@ -1,8 +1,9 @@
-package com.example.hackintosh.ftwr
+package com.example.hackintosh.ftwr.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.hackintosh.ftwr.R
 import com.example.hackintosh.ftwr.utils.Constants
 
 class QuestionActivity : AppCompatActivity() {

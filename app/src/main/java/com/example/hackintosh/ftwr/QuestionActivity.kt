@@ -16,6 +16,6 @@ class QuestionActivity : AppCompatActivity() {
         usernameTextView = findViewById(R.id.userNameTextView)
 
         val userName = intent.getStringExtra(Constants.CACHED_USERNAME_KEY)
-        usernameTextView.text = userName
+        usernameTextView.text = getString(R.string.ftwr, userName)
     }
 }

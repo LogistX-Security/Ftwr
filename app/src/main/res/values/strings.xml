@@ -2,4 +2,5 @@
     <string name="app_name">ftwr</string>
     <string name="provide_name">Please provide your Name</string>
     <string name="follow">Follow</string>
+    <string name="ftwr">Follow The White Rabbit, %1$s!</string>
 </resources>

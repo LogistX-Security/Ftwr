@@ -8,7 +8,7 @@ class InviteFragment: BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        super.setContentLayout(R.layout.fragment_quiz)
+        super.setContentLayout(R.layout.fragment_invite)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/loginEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -49,6 +49,8 @@
         android:textCursorDrawable="@drawable/custom_edit_text_cursor"
         android:textSize="22sp"
         android:textStyle="bold"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +59,7 @@
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/loginButton"
         android:layout_marginStart="30dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="30dp"
@@ -67,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/loginEditText"
         app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

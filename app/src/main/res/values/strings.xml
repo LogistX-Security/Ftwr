@@ -3,4 +3,7 @@
     <string name="provide_name">Please provide your Name</string>
     <string name="follow">Follow</string>
     <string name="ftwr">Follow The White Rabbit, %1$s!</string>
+    <string name="accept">Yes, I will give you a chance to impress me!</string>
+    <string name="reject">No, maybe next time, but not today</string>
+    <string name="additional_questions">Have any questions? Call me!</string>
 </resources>

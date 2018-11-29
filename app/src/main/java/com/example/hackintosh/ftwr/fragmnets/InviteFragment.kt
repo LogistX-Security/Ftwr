@@ -1,5 +1,6 @@
 package com.example.hackintosh.ftwr.fragmnets
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.hackintosh.ftwr.R
@@ -7,9 +8,15 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.TypefaceSpan
 import android.graphics.Typeface
+import android.net.Uri
+import android.support.constraint.ConstraintLayout
 import android.text.style.RelativeSizeSpan
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import com.example.hackintosh.ftwr.activities.QuestionActivity
+import com.example.hackintosh.ftwr.utils.Constants
+import com.example.hackintosh.ftwr.utils.SharedPrefUtil
 
 
 class InviteFragment: BaseFragment() {
@@ -18,6 +25,8 @@ class InviteFragment: BaseFragment() {
     lateinit var callButton: Button
     lateinit var acceptButton: Button
     lateinit var rejectButton: Button
+    lateinit var rabbitImage: ImageView
+    lateinit var decisionButtonLayout: ConstraintLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +40,20 @@ class InviteFragment: BaseFragment() {
         callButton = view.findViewById(R.id.callButton)
         acceptButton = view.findViewById(R.id.acceptButton)
         rejectButton = view.findViewById(R.id.rejectButton)
+        rabbitImage = view.findViewById(R.id.rabbitImage)
+        decisionButtonLayout = view.findViewById(R.id.buttonDecisionLayout)
 
-        initDetails()
+        acceptButton.setOnClickListener { onAccept() }
+        callButton.setOnClickListener { performCall() }
+        rejectButton.setOnClickListener { performCall() }
+
+        val isResponseProvided = SharedPrefUtil.getInstance(activity!!).getBoolean(Constants.PROVIDE_RESPONSE_KEY, false)
+
+        if (isResponseProvided) {
+            hideDecisionLayout()
+        } else {
+            initDetails()
+        }
     }
 
     fun initDetails() {
@@ -47,6 +68,24 @@ class InviteFragment: BaseFragment() {
         sb.setSpan(actoniaSpan, finalString.indexOf(custom), finalString.indexOf(normalAfter), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         sb.setSpan(RelativeSizeSpan(1.5f), finalString.indexOf(custom), finalString.indexOf(normalAfter), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         inviteMessage.text = sb
+    }
+
+    private fun hideDecisionLayout() {
+        decisionButtonLayout.visibility = View.INVISIBLE
+        inviteMessage.visibility = View.INVISIBLE
+        rabbitImage.visibility = View.VISIBLE
+    }
+
+    private fun onAccept() {
+        hideDecisionLayout()
+        (activity as QuestionActivity).onAccept()
+        SharedPrefUtil.getInstance(activity!!).putBoolean(Constants.PROVIDE_RESPONSE_KEY, true)
+    }
+
+    fun performCall() {
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("tel:068591082")
+        startActivity(intent)
     }
 
 }

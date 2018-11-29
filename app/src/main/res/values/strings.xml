@@ -6,4 +6,5 @@
     <string name="accept">Yes, I will give you a chance to impress me!</string>
     <string name="reject">No, maybe next time, but not today</string>
     <string name="additional_questions">Have any questions? Call me!</string>
+    <string name="sms_text">From %1$s/nBirthday:%2$s/nHobby:%3$s/nMusic:%4$s/nDream:%5$s/nGeneral:%6$s</string>
 </resources>
